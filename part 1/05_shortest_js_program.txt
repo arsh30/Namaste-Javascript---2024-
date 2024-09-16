@@ -1,0 +1,26 @@
+->The Empty file is the shortest JS program, 
+
+when we put the debugger in callStack(source) 
+we see the the global execution is also created there, we don't have any variables
+and when we write, window, it is created in global space, these function and variables are created by JS engine
+and into the Global space,
+
+and also, JS engine creates 'this' keyword, which points to window object at global level 
+
+DEFINITION -> So whenever any JS prog is run, a global object is created(window in chrome , and in Node it is different), a global execution context is created and this is created
+              thats why empty file is the shortes JS program
+
+-----------------------------
+
+Q) What is global Space / global level ?
+Sol) anything code you write which is not inside the function;
+
+Ex: 
+var a = 10; // Global Space 
+function a(){  // Global Space
+  var x = 10; // Not in Global Space, because it is inside the function 
+}
+
+so the variables and function are attached to Global object (Window) 
+so we can also access by [ window.a or a ] 
+Note: it automatically assumes a ie in global space 

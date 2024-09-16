@@ -1,0 +1,12 @@
+Everything in Js happens inside an "EXECUTION CONTEXT"
+
+// We can say EXECUTION CONTEXT is a Big Box where whole JS code executed 
+
+- It has 2 component in it 
+1. Memory component / variable Environment -> where all variable and functions are stored in key value pair form 
+2. Code Component / Thread of Execution -> where code is executed, one line at a time 
+
+
+-  Javascript is sync single Thread language. (means 1 line ek baar chlti hai, and next line tabhi execute hogi, jb prev wali complete ho chuki hai)
+
+***************** Finish **************

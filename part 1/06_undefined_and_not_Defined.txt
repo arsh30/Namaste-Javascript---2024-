@@ -1,0 +1,23 @@
+UNDEFINED -> means we only declare the variable and dont put any value, so it is undefined,
+
+            so var a = 7; // Even the line has executed, the JS engine read all the variables and put the value as undefined
+
+            so var b; // It is also undefined because we just only declare the variable 
+
+
+NOT DEFINED -> means we did not allocate the memory to the variable , or we can say we did not create the variable 
+              thats why it is giving not defined 
+
+              and also it is not present in the Global execution context 
+
+-------------------------------------------------------
+
+NOTE: JS is loosly typed language, because when we declare any variable , we can put any thing in the variable 
+
+Ex: initially the variable is undefined then we update to string, 
+and then also we update the same variable to Number, so the final 
+value it is present is Number. 
+
+
+2. Note: never do like this, var a = undefined;
+so write like this -> var a; // It is also undefined 

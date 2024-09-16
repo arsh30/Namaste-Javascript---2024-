@@ -1,0 +1,83 @@
+WHAT HAPPENS WHEN WE EXECUTE JS CODE ?
+
+Sol) Everything in JS, happens in Execution context, so when we run the js code, a execution context is created 
+
+------------- HOW JS CODE IS EXECUTED IN EXECUTION CONTEXT AND CALL STACK --------------
+
+var n = 2;
+function square (num) {
+  var ans = num * num;
+  return ans;
+}
+
+var square2 = square(n);
+var square4 = square(4);
+
+------
+when this piece of code of run -> A Global Execution Context created
+where it has 2 component ie memory component and code component 
+
+This Execution Context has created in 2 phases ie 
+1. MEMORY CREATION PHASE 
+2. CODE EXECUTION PHASE 
+
+-> note in first phase javascript pure code ko line by line ready kregi and memory creation phase me store kregi in key value pair form me 
+-> jo bhi variable honge, unke corresponds "undefined" store hoga 
+-> and jo bhi function hoga vo pura exact function print hojayega in Memory creation phase 
+
+Now phase 2 Start ie Code Execution phase -> 
+
+Now js again runs the whole code line by line , and execute the code now 
+
+1. n = 2;  // memory me abhi undefined tha, so ab vo replace ho chuka hoga with 2 
+2. square function(){ } // nothing will happen because here we are not invoking the function just decalring the funciton 
+3. so it moves to square2 variable which invoke the square function 
+
+Note -> when we invoke a function a whole new Execution context is created 
+which have again 2 component ie memory component/ memory creation and code component/ code Execution
+
+so first phase memory creation phase (Local memory) -> memory and function ko memory assign hojayegi 
+num (parameter) = undefined;
+ans = undefined;
+
+So second phase is code Execution phase, where each line is executing line by line 
+n = 2; // 2 ajeyga instead of undefined 
+var ans = 2 * 2 = 4; // ans  = 4; 
+return ans; // Jese hi return aaya or '}' ye bracket toh pura Execution context delete hojayega 
+//or whenver we see the return keyword, tit states that,return the control of the program to the place / execution context 
+from where function was invoked,
+[so it finds the value of ans in the local memory]
+
+
+------- MAIN IMPORTANT TO REMEMBER [WHOLE CONCEPT REVISE] --------
+var square4 = square(4); // we are invoking another function 
+
+A brand new execution context is created which has 2 component ie memory and code 
+and They created in 2 phases memory creation phase and code execution 
+
+1. In first phases ie memory creation phase -> all variables are stored in the memory with undefined value and 
+  function are stored as it is the whole code is stored 
+  num = undefined;
+  ans = undefined;
+
+2. Code execution phase -> 
+num = 4; 
+var ans = 4*4; // 16;
+return ans; // 16 jo hai, square 4 ko return hojayega and ye jo execution context create hua tha vo pura remove hojayega 
+
+
+So jab sara code execute hojayega Toh jitna bhi GLOBAL EXECUTION CONTEXT HAI. VO BHI REMOVE HOJAYEGA 
+
+
+note -> 
+1. Ye sare jitne bhi hote hai vo sab 1 call stack me chle jaate hai [CALL Stack is used for only managing the Execution Context]
+2. jitne Execution stack bnte hai, call stack ke andr Global Execution context hota hai, 
+udr append hote rehte hai, sare Execution context and jese hi uska purpose khtm toh vo udr se remove hojata hai 
+
+CALL STACK ALSO KNOWNS AS:
+1. Execution context stack
+2. program stack 
+3. control stack 
+4. run time stack 
+
+************************************** FINISH **************************************
